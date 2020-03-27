@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Testing simple 2 ways Translate function</title>
+</head>
+<body>
+English: <input type="text" id="input" oninput="trans(); engSub()">
+<span id="result"></span>
+<br>
+<b>Avaiable words to translate: <a style="color: red">tiger,cat,dog,bat,worm,fish,bird.</a></b>
+<script>
+    let english = ["tiger","cat","dog","bat","worm","fish","bird"];
+    let vn = ["ho","meo","cho","doi","sau","ca","chim"];
+function trans() {
+    let text = document.getElementById("input").value;
+    for (let a = 0; a< english.length; a++){
+        if (text === english[a]){
+            text = vn[a];
+            document.getElementById("result").innerHTML = "Translated to Vietnamese: "+ text;
+        }
+    }
+}
+
+function engSub() {
+    let text2 = document.getElementById("input").value;
+    for (let i = 0; i < vn.length; i++){
+        if (text2 === vn[i]){
+            text2 = english[i];
+            document.getElementById("result").innerHTML = "Translated to English: " + text2;
+        }
+    }
+}
+
+
+
+</script>
+</body>
+</html>
